@@ -5,5 +5,4 @@ public class UsuarioNaoExisteException extends Exception {
     public UsuarioNaoExisteException() {
         super("Usuario nao cadastrado.");
     }
-
 }

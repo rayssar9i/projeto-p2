@@ -27,3 +27,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Estado salvo pelo sistema ###
+system_state.dat
