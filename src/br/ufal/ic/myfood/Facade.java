@@ -74,8 +74,8 @@ public class Facade {
      */
     public void criarUsuario(String nome, String email, String senha,
                              String endereco, String cpf) throws Exception {
-        // CPF explicitamente vazio → inválido para dono de empresa
-        if (cpf != null && cpf.isEmpty()) throw new Exception("CPF invalido");
+        // CPF não fornecido ou vazio → inválido para dono de empresa
+        if (cpf == null || cpf.isEmpty()) throw new Exception("CPF invalido");
         getState().usuarioManager.criarUsuario(nome, email, senha, endereco, cpf);
     }
 

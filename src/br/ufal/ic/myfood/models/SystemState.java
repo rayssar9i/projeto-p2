@@ -3,7 +3,7 @@ package br.ufal.ic.myfood.models;
 import java.io.*;
 
 /**
- * Agrupa TODO o estado do sistema em um único objeto serializável.
+ *; Agrupa TODO o estado do sistema em um único objeto serializável.
  *
  * PADRÃO DE PERSISTÊNCIA:
  *   - zerarSistema()    → cria um novo SystemState vazio + apaga o arquivo
