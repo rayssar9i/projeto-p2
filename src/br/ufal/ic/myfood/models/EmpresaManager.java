@@ -89,7 +89,7 @@ public class EmpresaManager implements Serializable {
                 .collect(Collectors.toList());
 
         // Monta string no formato exigido pelos testes EasyAccept
-        StringBuilder sb = new StringBuilder("{[[");
+        StringBuilder sb = new StringBuilder("{[");
         for (int i = 0; i < dosDono.size(); i++) {
             sb.append("[")
               .append(dosDono.get(i).getNome())
@@ -98,7 +98,7 @@ public class EmpresaManager implements Serializable {
               .append("]");
             if (i < dosDono.size() - 1) sb.append(", ");
         }
-        sb.append("]]}");
+        sb.append("]}");
         return sb.toString();
     }
 
@@ -162,6 +162,6 @@ public class EmpresaManager implements Serializable {
                 .filter(e -> e.getId() == id)
                 .findFirst()
                .orElse(null);
-               ;
+               
     }
 }

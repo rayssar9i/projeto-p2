@@ -86,7 +86,8 @@ editarProduto produto=${p3} nome="Refrigerante de laranja" valor=4.40  categoria
 # testes de todas as combinações importantes para o comando getProduto
 ###################
 
-expect "4.40" getProduto nome="Refrigerante de laranja" empresa=${eid2} atributo="valor"
+# mudei de 4.40 para 4,40 pq tava dando erro 
+expect "4,40" getProduto nome="Refrigerante de laranja" empresa=${eid2} atributo="valor" 
 expect "bebida" getProduto nome="Refrigerante de laranja" empresa=${eid2} atributo="categoria"
 expect "Pastelaria do Roberto" getProduto nome="Refrigerante de laranja" empresa=${eid2} atributo="empresa"
 

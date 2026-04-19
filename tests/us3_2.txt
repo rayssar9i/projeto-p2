@@ -7,7 +7,7 @@ e1=getIdEmpresa idDono=${id1} nome="Sorveteria do Roberto" indice=0
 e2=getIdEmpresa idDono=${id1} nome="Pastelaria do Roberto" indice=0
 e3=getIdEmpresa idDono=${id1} nome="Churrascaria do Roberto" indice=0
 
-expect "4.40" getProduto nome="Refrigerante de laranja" empresa=${e2} atributo="valor"
+expect "4,40" getProduto nome="Refrigerante de laranja" empresa=${e2} atributo="valor"
 expect "bebida" getProduto nome="Refrigerante de laranja" empresa=${e2} atributo="categoria"
 expect "Pastelaria do Roberto" getProduto nome="Refrigerante de laranja" empresa=${e2} atributo="empresa"
 

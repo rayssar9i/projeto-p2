@@ -194,7 +194,8 @@ public class PedidoManager implements Serializable {
                             return p != null ? p.getNome() : "";
                         })
                         .collect(Collectors.toList());
-                return "{[[" + String.join(", ", nomes) + "]]}";
+                //return "{[" + String.join(", ", nomes) + "]}";
+                return "{[" + String.join(", ", nomes) + "]}";
 
             case "valor":
                 // Soma os valores de todos os produtos (incluindo repetições)
@@ -204,7 +205,7 @@ public class PedidoManager implements Serializable {
                     if (p != null) total += p.getValor();
                 }
                 // Formata com 2 casas decimais (ex: "6.20", não "6.2")
-                return String.format( java.util.Locale.US, "%.2f", total); //teste pra corrigirt o erro de . ou , 
+                return String.format(java.util.Locale.US, "%.2f", total);//teste pra corrigirt o erro de . ou , 
 
             default:
                 throw new Exception("Atributo nao existe");
