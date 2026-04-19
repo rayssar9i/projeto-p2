@@ -89,7 +89,7 @@ public class EmpresaManager implements Serializable {
                 .collect(Collectors.toList());
 
         // Monta string no formato exigido pelos testes EasyAccept
-        StringBuilder sb = new StringBuilder("{[");
+        StringBuilder sb = new StringBuilder("{[[");
         for (int i = 0; i < dosDono.size(); i++) {
             sb.append("[")
               .append(dosDono.get(i).getNome())
@@ -98,7 +98,7 @@ public class EmpresaManager implements Serializable {
               .append("]");
             if (i < dosDono.size() - 1) sb.append(", ");
         }
-        sb.append("]}");
+        sb.append("]]}");
         return sb.toString();
     }
 
@@ -131,12 +131,14 @@ public class EmpresaManager implements Serializable {
     public String getAtributoEmpresa(int empresaId, String atributo,
                                      UsuarioManager usuarioManager) throws Exception {
 
+        //verifica se empresa existe primeiro -> corrigindo erro  
+        Empresa empresa = buscarPorId(empresaId);
+        if (empresa == null) throw new Exception("Empresa nao cadastrada");
+                                
         // Atributo vazio → inválido antes de qualquer outra verificação
         if (atributo == null || atributo.isEmpty()) throw new Exception("Atributo invalido");
 
-        Empresa empresa = buscarPorId(empresaId);
-        if (empresa == null) throw new Exception("Empresa nao cadastrada");
-
+       
         switch (atributo.toLowerCase()) {
             case "nome":        return empresa.getNome();
             case "endereco":    return empresa.getEndereco();
@@ -159,6 +161,7 @@ public class EmpresaManager implements Serializable {
         return empresas.stream()
                 .filter(e -> e.getId() == id)
                 .findFirst()
-                .orElse(null);
+               .orElse(null);
+               ;
     }
 }
