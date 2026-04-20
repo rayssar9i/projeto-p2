@@ -25,3 +25,14 @@ public class Main {
         EasyAccept.main(new String[]{"br.ufal.ic.myfood.Facade", "tests/us4_2.txt"});
     }
 }
+/*package br.ufal.ic.myfood;
+import easyaccept.EasyAccept;
+
+public class Main {
+    public static void main(String[] args) {
+        // Agora o Java SÓ roda o que o PowerShell mandar via args[0]
+        if (args.length > 0) {
+            EasyAccept.main(new String[]{"br.ufal.ic.myfood.Facade", args[0]});
+        }
+    }
+} */

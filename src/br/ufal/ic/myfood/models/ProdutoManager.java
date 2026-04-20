@@ -109,7 +109,7 @@ public class ProdutoManager implements Serializable {
             case "nome":      return produto.getNome();
             case "valor":
                 // String.format garante "4.40" e não "4.4" — exigido pelos testes
-                return String.format("%.2f", produto.getValor());
+               return String.format(java.util.Locale.US, "%.2f", produto.getValor());
             case "categoria": return produto.getCategoria();
             case "empresa":
                 // Resolve ID → nome da empresa
