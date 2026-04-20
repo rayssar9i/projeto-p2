@@ -12,11 +12,15 @@ Compila todas as classes do sistema (modelos, exceções e fachada):
 
 PowerShell
 javac -cp "lib/easyaccept.jar;." -d . src/br/ufal/ic/myfood/*.java src/br/ufal/ic/myfood/models/*.java src/br/ufal/ic/myfood/exceptions/*.java
+
+
 2. Execução de uma User Story Específica
 Para validar uma funcionalidade individual (exemplo: US1.1):
 
 PowerShell
-java -cp "lib/easyaccept.jar;." easyaccept.EasyAccept br.ufal.ic.myfood.Facade tests/us1_1.txt
+
+	java -cp "lib/easyaccept.jar;." easyaccept.EasyAccept br.ufal.ic.myfood.Facade tests/us1_1.txt
+	
 3. Execução em Lote (Todos os Testes)
 Para verificar o projeto completo de uma só vez:
 
